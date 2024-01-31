@@ -1,0 +1,37 @@
+#current {
+  height: 50px;
+  font-size: 40px;
+  margin: 0px 20px;
+}
+
+#numbers {
+  display: flex;
+  margin: 50px 0px;
+}
+
+.number {
+  all: unset;
+  font-size: 40px;
+  margin: 0px 20px;
+  background-color: gray;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  ;
+}
+
+#operations {
+  display: flex;
+}
+
+.operation {
+  all: unset;
+  font-size: 40px;
+  margin: 0px 20px;
+  background-color: gray;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+}
