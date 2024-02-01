@@ -2,10 +2,6 @@ const numbers = document.querySelector('#numbers');
 const operations = document.querySelector('#operations');
 const current = document.querySelector('#current');
 
-// let displayValue = '';
-// let num1 = '';
-// let num2 = '';
-// let currentOp = '';
 let displayValue, num1, num2, currentOp;
 displayValue = num1 = num2 = currentOp = '';
 
@@ -15,6 +11,16 @@ for (let i = 0; i < 10; i++) {
   number.textContent = i;
   numbers.appendChild(number.cloneNode(true));
 }
+
+let eachNumber = document.querySelectorAll('.number');
+eachNumber.forEach(function(num) {
+  num.addEventListener('click', function() {
+    if (num1 == 'ERROR') num1 = '';
+    if (currentOp && num2.length < 20) num2 += num.textContent;
+    else if (num1.length < 20) num1 += num.textContent;
+    updateDisplay();
+  });
+});
 
 let eachOp = document.querySelectorAll('.operation');
 eachOp.forEach(function(op) {
@@ -78,13 +84,3 @@ function updateDisplay() {
   else if (num1) displayValue = num1;
   current.textContent = displayValue;
 }
-
-let eachNumber = document.querySelectorAll('.number');
-eachNumber.forEach(function(num) {
-  num.addEventListener('click', function() {
-    if (num1 == 'ERROR') num1 = '';
-    if (currentOp) num2 += num.textContent;
-    else num1 += num.textContent;
-    updateDisplay();
-  });
-});
